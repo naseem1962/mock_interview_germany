@@ -1,0 +1,55 @@
+.captions {
+  margin: 0;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.82);
+  border-radius: 8px;
+  color: #f3f4f6;
+  text-align: left;
+  max-width: 720px;
+  margin-inline: auto;
+  animation: captionsFade 0.35s ease;
+}
+
+@keyframes captionsFade {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.captions-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  color: #fbbf24;
+}
+
+.captions-interviewer .captions-label {
+  color: #93c5fd;
+}
+
+.captions-student .captions-label {
+  color: #86efac;
+}
+
+.captions-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f3f4f6;
+}
+
+@media (max-width: 640px) {
+  .captions {
+    padding: 10px 14px;
+  }
+
+  .captions-text {
+    font-size: 0.9rem;
+  }
+}

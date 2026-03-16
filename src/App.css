@@ -1,0 +1,10 @@
+.app {
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app {
+    background: #111827;
+  }
+}

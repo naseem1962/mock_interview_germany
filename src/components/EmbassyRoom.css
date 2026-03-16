@@ -1,0 +1,143 @@
+.embassy-room {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.room-backdrop {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #2c3e50 0%, #1a252f 50%, #0f1419 100%);
+}
+
+.room-desk {
+  position: absolute;
+  bottom: 18%;
+  left: 8%;
+  right: 8%;
+  height: 12%;
+  background: linear-gradient(180deg, #3d2c1a 0%, #2a1f14 100%);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.room-flag {
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  width: 48px;
+  height: 32px;
+  background: linear-gradient(180deg, #000 0%, #000 33.33%, #dd0000 33.33%, #dd0000 66.66%, #ffce00 66.66%, #ffce00 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.characters {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  padding: 0 5% 22% 5%;
+  box-sizing: border-box;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.character.full {
+  flex: 1;
+  max-width: 50%;
+}
+
+.character.half {
+  flex: 1;
+  max-width: 50%;
+}
+
+.character-interviewer {
+  align-items: center;
+}
+
+.character-student {
+  align-items: center;
+}
+
+.character-silhouette {
+  width: 120px;
+  height: 140px;
+  border-radius: 50% 50% 8px 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.interviewer-silhouette {
+  background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.student-silhouette {
+  background: linear-gradient(180deg, #5a6a7a 0%, #3d4d5d 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.character.speaking .character-silhouette {
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.7), 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.character-label {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Camera angle: focus on interviewer only */
+.camera-interviewer .character-student {
+  opacity: 0.15;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+.camera-interviewer .character-interviewer {
+  max-width: 70%;
+}
+
+/* Camera angle: focus on student only */
+.camera-student .character-interviewer {
+  opacity: 0.15;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+.camera-student .character-student {
+  max-width: 70%;
+}
+
+/* Two-shot: both visible */
+.camera-two-shot .character {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .character-silhouette {
+    width: 90px;
+    height: 110px;
+  }
+
+  .character-label {
+    font-size: 0.65rem;
+  }
+}
