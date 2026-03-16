@@ -104,21 +104,9 @@ export const SCRIPT = [
   },
   {
     speaker: 'student',
-    text: 'Yes, I had a Saudi Arabia visa refusal in 2018.',
+    text: 'Yes, I had a Saudi Arabia visa history in 2018.',
     camera: 'student',
     durationMs: 4500,
-  },
-  {
-    speaker: 'interviewer',
-    text: 'What was the reason?',
-    camera: 'interviewer',
-    durationMs: 2600,
-  },
-  {
-    speaker: 'student',
-    text: 'The refusal happened due to documentation and sponsorship issues at that time.',
-    camera: 'student',
-    durationMs: 5500,
   },
   {
     speaker: 'interviewer',
